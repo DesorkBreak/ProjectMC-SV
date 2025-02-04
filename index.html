@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quieres ser mi San Valentín?</title>
     <style>
         body {
@@ -20,7 +20,7 @@
 
         .container {
             text-align: center;
-            background: rgba(0, 0, 0, 0); 
+            background: rgba(0, 0, 0, 0);
             padding: 20px;
             border-radius: 10px;
             color: white;
@@ -30,6 +30,7 @@
             transform: translateX(-50%);
             z-index: 2;
             width: 80%;
+            max-width: 600px;
         }
 
         .buttons-container {
@@ -38,11 +39,12 @@
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
-            background: rgba(0, 0, 0, 0); 
-            padding: 20px 40px; 
-            border-radius: 15px; 
+            background: rgba(0, 0, 0, 0);
+            padding: 20px 40px;
+            border-radius: 15px;
             z-index: 2;
-            width: 60%; 
+            width: 80%;
+            max-width: 600px;
         }
 
         .buttons {
@@ -53,13 +55,13 @@
         }
 
         button {
-            font-size: 20px;
+            font-size: 18px;
             padding: 15px 40px;
             border: none;
             cursor: pointer;
             border-radius: 25px;
             transition: transform 0.2s ease-in-out;
-            min-width: 200px;
+            min-width: 150px;
         }
 
         .yes {
@@ -74,8 +76,9 @@
         }
 
         .gif-overlay {
-            width: 450px;
-            height: 450px;
+            width: 100%;
+            max-width: 450px;
+            height: auto;
         }
 
         #countdownContainer {
@@ -87,6 +90,49 @@
             font-size: 24px;
             font-weight: bold;
             display: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container, .buttons-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px 30px;
+            }
+
+            .gif-overlay {
+                width: 80%;
+                max-width: 350px;
+            }
+
+            #countdownContainer {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container, .buttons-container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .gif-overlay {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            #countdownContainer {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -120,7 +166,7 @@
             "https://media.tenor.com/T9aXfHX_xn8AAAAj/dudu-crying-dudu-cute.gif",
             "https://i.pinimg.com/originals/74/fa/43/74fa4364b147b258ef9303b5c83e49e4.gif",
             "https://media.tenor.com/MYGG8hAeE04AAAAj/angry-bubu.gif",
-            "https://media.tenor.com/RlEkTWezOEsAAAAj/bubu-dudu-dudu-bubu.gif" // Corregido el error de comillas
+            "https://media.tenor.com/RlEkTWezOEsAAAAj/bubu-dudu-dudu-bubu.gif"
         ];
 
         function mostrarMensaje() {
